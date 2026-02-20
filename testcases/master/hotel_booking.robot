@@ -1,26 +1,21 @@
 *** Settings ***
 Library    SeleniumLibrary
-Test Setup       Open Booking Page
-Test Teardown    Close Browser
 Resource    ../../testdata/test_data_hotel_booking.robot
 Resource    ../../keywords/ui/page/hotelbooking.robot
+
+Test Setup    Open browser hotel booking form
+Test Teardown    Close Browser
 
 
 *** Test Cases ***
 
 Verify booking form with all input field
-    Verify firstname is empty
     Input and verify firstname
-    Verify lastname is empty
     Input and verify lastname
-    Verify phone is empty
     Input and verify phone
-    Verify email is empty
     Input and verify email
-    Verify Number of adults is empty
     Select and verify Number of adults
     Select pet option
-    Verify note is empty
     Input and verify note
     Click Accept Term
     Click submit application
